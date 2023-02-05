@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom_shadow {
+    box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
+}
+
+.menu_shadow {
+    box-shadow: 0 5px 5px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 10%), 0 -3px 0 0 #ef4a23;
+}
+
+
+.ctm_btn {
+    @apply bg-[#3749bb] p-[0_20px] h-[42px] leading-[38px] text-[16px] cursor-pointer rounded-[4px] outline-0 text-center ease-in-out duration-300 border-[0px] border-solid border-[#3749bb] text-[#fff] font-[500]
+}
+
+.ctm_out_btn {
+    @apply bg-[#3749bb00] p-[0_20px] h-[42px] leading-[38px] text-[16px] cursor-pointer rounded-[4px] outline-0 text-center ease-in-out duration-300 border-[2px] border-solid border-[#3749bb] text-[#3749bb] font-[500]
+}
+
+.ctm_btn:hover {
+    box-shadow: 0 50px rgba(0, 0, 0, .2) inset;
+
+}
+
+main {
+    @apply bg-[#f2f4f8]
+}
+
+.content_center {
+    @apply flex justify-center items-center flex-wrap
+}
+
+.content_between {
+    @apply flex justify-between items-center flex-wrap
+}
+
+/* header start  */
+.top {
+    @apply p-[10px] bg-[#081621]
+}
+
+.header {
+    @apply shadow-[custom_shadow] relative z-[100]
+}
+
+.stikyadded {
+    @apply bg-[#fff] fixed w-full transition-all top-0
+}
+
+.logo {
+    @apply h-[52px] w-auto flex-[0_0_160px]
+}
+
+.search {
+    @apply p-[10px_0_10px_0] flex-[1_1_auto] relative
+}
+
+.right_top_menu {
+    @apply p-[9px_0_0px_10px] flex-[0_0_550px]
+}
+
+header .search input {
+    @apply border-0 p-[0_40px_0px_20px] font-normal rounded-[4px] mb-[0] w-full h-[42px] text-[20px]
+}
+
+.search_icons {
+    @apply absolute top-[14px] right-[8px] text-[20px]
+}
+
+.right_top_menu {
+    @apply content_between
+}
+
+.right_top_menu a {
+    @apply content_center pl-[20px]
+}
+
+.o_icon {
+    @apply pr-[10px] content_center text-[20px]
+}
+
+.of_content h5 {
+    @apply text-[#fff]
+}
+
+.of_content {
+    @apply text-[15px]
+}
+
+.of_content p {
+    @apply text-[12px]
+}
+
+.main_menu_items {
+    @apply flex content-center justify-start flex-wrap
+}
+
+.main_menu_items li {
+    @apply relative
+}
+
+.main_menu_items a {
+    @apply p-[0_7px_0_8px] leading-[50px] inline-block text-[14px] text-[#222] font-[600] relative
+}
+
+.dropdown_menu {
+    @apply absolute left-[10px] bg-[#fff] z-[99] p-[5px_0] menu_shadow
+}
+
+.dropdown_menu li:hover>a {
+    background: #ef4a23;
+    color: #fff;
+}
+
+.dropdown_menu li a {
+    @apply block font-normal text-[14px] leading-[20px] p-[4px_15px] w-[200px] text-[#222]
+}
+
+/* header end  */
+
+/* banner */
+
+.swiper {
+    @apply w-full h-full
+}
+
+.swiper-slide {
+    @apply text-center font-[18px] bg-[#fff] flex justify-center items-center
+}
+
+.swiper-slide img {
+    @apply w-full h-full block object-cover
+}
+
+
+/* category  */
+.category {
+    @apply pt-[30px] pb-[30px]
+}
+
+.card_item {
+    @apply bg-[#fff] shadow-md p-[25px] mb-[20px] text-center flex flex-col justify-between rounded-[15px] cursor-pointer
+}
+
+.card_thum {
+    @apply text-center flex justify-center content-center
+}
+
+.card_item h5 {
+    @apply text-[#01132d] pt-[18px] text-[18px]
+}
+
+/* product */
+.product_inner {
+    @apply flex flex-col relative w-full
+}
+
+.product_section .card_item {
+    @apply p-[10px]
+}
+
+.product_inner .card_thum {
+    @apply flex-[0_0_220px] p-[20px] mb-[10px]
+}
+
+.product_content {
+    @apply flex flex-col flex-[1_1_auto] p-[2px] text-left
+}
+
+.product_content h4 {
+    @apply text-[15px] font-[400] h-[50px] mb-[25px] leading-[20px]
+}
+
+.product_item_price .price_new {
+    @apply font-[700] text-[18px]
+}
+
+.product_item_price .price_old {
+    @apply line-through font-[700] text-[12px] text-[#666]
+}
+
+.marks_price {
+    @apply absolute top-[15px] left-[-10px] p-[2px] text-[#fff] rounded-r-[20px]
+}
+
+.marks_price .mark {
+    @apply pl-[10px] pr-[20px] text-[12px] block
+}
+
+/* footer */
+.footer_area {
+    @apply flex flex-wrap
+}
+
+.support {
+    @apply flex-[1_1_25%] pr-[50px]
+}
+
+.connected {
+    @apply flex-[1_1_25%] pl-[50px]
+}
+
+.about_us {
+    @apply flex-[1_1_50%]
+}
+
+.f_title h4 {
+    @apply uppercase text-[#fff] tracking-[4px] mb-[10px]
+}
+
+.s_inner .s_box {
+    @apply flex items-center border-[1px] border-[#666] rounded-[50px] p-[15px] gap-3 mt-[20px] cursor-pointer
+}
+
+.s_icon {
+    @apply text-[20px] text-[#fff] pl-[10px]
+}
+
+.s_des {
+    @apply pl-[10px]
+}
+
+.s_header {
+    @apply text-light text-[12px]
+}
+
+.s_des p {
+    @apply font-[600] text-[18px] text-primary
+}
+
+.link a {
+    @apply text-[#666] text-[14px]
+}
+
+.link a:hover {
+    color: #F58220;
+    text-decoration: underline
+}
+
+.f_left_social {
+    @apply flex items-center justify-center gap-5
+}
+
+.social_icon {
+    @apply w-[40px] h-[40px] rounded-[50%] bg-[#212E38] flex items-center justify-center text-[#fff] cursor-pointer
+}
+
+.social_icon:hover {
+    @apply bg-[#3749bb]
+}
