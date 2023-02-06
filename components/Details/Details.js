@@ -3,7 +3,7 @@ import {detailsData} from './data';
 
 const Details = () => {
   return (
-    <div className="px-[40px]">
+    <div className="px-[20px] lg:px-[40px]">
       <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  gap-4 mt-[50px] pb-[80px]">
         {detailsData.map(item => (
           <>

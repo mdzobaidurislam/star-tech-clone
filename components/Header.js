@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import TopBar from './TopBar';
 export default function Header() {
+  const [toggle, setToggle] = useState(false);
+  console.log(toggle);
   const categoryMenu = [
     {
       _id: 1,
@@ -130,7 +132,9 @@ export default function Header() {
     for (let item of categoryMenu) {
       cateList.push(
         <>
-          <li className={`group/item `} key={item._id}>
+          <li
+            className={`group/item ${item.children ? 'has_children' : ''} `}
+            key={item._id}>
             <Link href="/" legacyBehavior>
               <a className="text-lg hover:text-primary  ">{item.name}</a>
             </Link>
@@ -158,19 +162,57 @@ export default function Header() {
   /* Method that will fix header after a specific scrollable */
   const isSticky = e => {
     const header = document.querySelector('.custom-nav');
+    const m_header = document.querySelector('.m_custom_nav');
     const scrollTop = window.scrollY;
-    scrollTop >= 80
-      ? header.classList.add('stikyadded')
-      : header.classList.remove('stikyadded');
+    if (scrollTop >= 1) {
+      header.classList.add('stikyadded');
+      m_header.classList.add('stikyadded');
+    } else {
+      header.classList.remove('stikyadded');
+      m_header.classList.remove('stikyadded');
+    }
   };
   return (
-    <header className="header ">
-      <TopBar />
-      <div className="main_menu_area shadow-lg custom-nav">
-        <div className=" px-[20px]">
-          <ul className="main_menu_items">{createMultiMenu(categoryMenu)}</ul>
+    <>
+      <header className="header ">
+        <div className="hidden lg:block ">
+          <TopBar />
+        </div>
+        <div
+          className={`main_menu_area shadow-lg custom-nav ${
+            toggle ? 'open' : ''
+          }`}>
+          <div className=" px-[20px]">
+            <ul className="main_menu_items">{createMultiMenu(categoryMenu)}</ul>
+          </div>
+        </div>
+      </header>
+      <div className="lg:hidden md:block">
+        <div className="mobaile_header  flex justify-between items-center px-[20px] bg-[#061520] m_custom_nav">
+          <div className="bar text-[#fff]" onClick={() => setToggle(!toggle)}>
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div className="m_logo">
+            <Image width="150" height="70" src="/assets/logo.png" alt="logo" />
+          </div>
+          <div className="m_right flex justify-between items-center gap-5 text-[14px]">
+            <div className="m_search text-primary">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div className="m_cart text-[#fff] relative">
+              <i class="fa-solid fa-cart-plus"></i>
+              <span className=" absolute  w-[20px] h-[20px] bg-primary rounded-[50%]  flex justify-center items-center text-[12px] font-[600] top-[-10px] right-[-15px] ">
+                11
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+      <div
+        onClick={() => setToggle(!toggle)}
+        className={`overlay ${toggle ? 'open' : ''}`}>
+        h
+      </div>
+    </>
   );
 }

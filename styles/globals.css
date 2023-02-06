@@ -25,6 +25,22 @@
 
 }
 
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: #00000038;
+    position: fixed;
+    z-index: 98;
+    right: 0px;
+    top: 59px;
+    bottom: 0;
+    display: none;
+}
+
+.overlay.open {
+    display: block;
+}
+
 main {
     @apply bg-[#f2f4f8]
 }
@@ -48,6 +64,15 @@ main {
 
 .stikyadded {
     @apply bg-[#fff] fixed w-full transition-all top-0
+}
+
+.main_menu_area.shadow-lg.custom-nav.open {
+    transform: translateX(0);
+}
+
+.mobaile_header.stikyadded {
+    background: #071621;
+    z-index: 9999;
 }
 
 .logo {
@@ -250,4 +275,116 @@ header .search input {
 
 .social_icon:hover {
     @apply bg-[#3749bb]
+}
+
+.has_children:before,
+.has_children:after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background: #999;
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    border: none;
+}
+
+.has_children:before {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .main_menu_area.custom-nav {
+        position: fixed;
+        left: 0;
+        width: 300px;
+        background: #fff;
+        z-index: 9999;
+        height: 100vh;
+        overflow-y: scroll;
+        padding-bottom: 200px;
+        top: 59px;
+        transition: all .5s ease-in-out;
+        transform: translateX(-300px);
+    }
+
+    .main_menu_items {
+        display: block;
+    }
+
+    .main_menu_items li {
+        position: relative;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .main_menu_items li>.dropdown_menu>li:last-child {
+        border-bottom: 0;
+    }
+
+    .dropdown_menu {
+        position: relative;
+        box-shadow: none;
+        background: #f9f9f9;
+    }
+
+    .dropdown_menu li a {
+        width: 100%;
+    }
+
+    .compare_product input {
+        font-size: 12px;
+    }
+
+    .compare_product button {
+        top: 14px;
+        right: 10px;
+    }
+
+    .support {
+        flex: 1 1 100%;
+        padding-right: 0px;
+        margin-bottom: 25px;
+    }
+
+    .connected {
+        flex: 1 1 100%;
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ads img {
+        width: 100%;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        padding: 40px 0;
+        gap: 20px;
+    }
+
+    .f_right {
+        flex-direction: column;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .product_inner .card_thum {
+        flex: 0 0 auto;
+    }
+
+    .product_content h4 {
+        height: 80px;
+        font-size: 12px;
+    }
+
+    .marks_price {
+        top: 0px;
+    }
 }

@@ -68,7 +68,7 @@ const Product = () => {
             <p>Get Your Desired Product from Featured Category!</p>
           </div>
         </div>
-        <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2  gap-4 mt-[50px]">
+        <div class="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2  gap-4 mt-[50px]">
           {categories.map(item => (
             <>
               <Link href={`category/${item._id}`} key={item._id} legacyBehavior>
