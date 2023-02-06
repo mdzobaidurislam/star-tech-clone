@@ -380,7 +380,10 @@ header .search input {
     }
 
     .product_content h4 {
-        font-size: 12px;
+        font-size: 15px;
+        height: 80px;
+        font-weight: 600;
+        line-height: 27px;
     }
 
     .marks_price {
