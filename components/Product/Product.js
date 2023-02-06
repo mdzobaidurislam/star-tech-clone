@@ -72,7 +72,7 @@ const Product = () => {
           {categories.map(item => (
             <>
               <Link href={`category/${item._id}`} key={item._id} legacyBehavior>
-                <a>
+                <a className="product_item">
                   <div className="card_item group/item hover:shadow-lg ">
                     <div className="product_inner">
                       <div class="marks_price bg-secondary">
