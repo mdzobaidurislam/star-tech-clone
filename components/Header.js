@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, {useEffect, useState} from 'react';
 import TopBar from './TopBar';
+import FooterMenu from './Footer/FooterMenu';
 export default function Header() {
   const [toggle, setToggle] = useState(false);
   console.log(toggle);
@@ -213,6 +214,7 @@ export default function Header() {
         className={`overlay ${toggle ? 'open' : ''}`}>
         h
       </div>
+      <FooterMenu />
     </>
   );
 }
