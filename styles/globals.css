@@ -277,22 +277,7 @@ header .search input {
     @apply bg-[#3749bb]
 }
 
-.has_children:before,
-.has_children:after {
-    content: "";
-    display: inline-block;
-    width: 15px;
-    height: 1px;
-    background: #999;
-    position: absolute;
-    right: 5px;
-    top: 20px;
-    border: none;
-}
 
-.has_children:before {
-    transform: rotate(90deg);
-}
 
 /* footer menu */
 .f_menu_area {
@@ -308,6 +293,24 @@ header .search input {
 }
 
 @media (max-width: 1023px) {
+
+    .has_children:before,
+    .has_children:after {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 1px;
+        background: #999;
+        position: absolute;
+        right: 5px;
+        top: 20px;
+        border: none;
+    }
+
+    .has_children:before {
+        transform: rotate(90deg);
+    }
+
     .main_menu_area.custom-nav {
         position: fixed;
         left: 0;
