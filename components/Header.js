@@ -179,7 +179,7 @@ export default function Header() {
           <TopBar />
         </div>
         <div
-          className={`main_menu_area shadow-lg custom-nav ${
+          className={`main_menu_area shadow-lg custom-nav hidden lg:block  ${
             toggle ? 'open' : ''
           }`}>
           <div className=" px-[20px]">

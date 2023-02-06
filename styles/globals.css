@@ -294,7 +294,8 @@ header .search input {
     transform: rotate(90deg);
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1025px) {
     .main_menu_area.custom-nav {
         position: fixed;
         left: 0;
@@ -307,6 +308,7 @@ header .search input {
         top: 59px;
         transition: all .5s ease-in-out;
         transform: translateX(-300px);
+        display: block;
     }
 
     .main_menu_items {
