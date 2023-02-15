@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import {signOut, useSession} from 'next-auth/react';
 
 const TopBar = () => {
+  const {status, data: session} = useSession();
   return (
     <div className="top flex">
       <div className="logo">
@@ -21,7 +23,7 @@ const TopBar = () => {
       </div>
       <div className="hidden lg:block">
         <div className="right_top_menu">
-          <Link href="/about">
+          <Link href="/shop">
             <div className="o_icon text-primary">
               <i class="fa-solid fa-gift"></i>
             </div>
@@ -39,15 +41,30 @@ const TopBar = () => {
               <p className="text-light">Special Deals</p>
             </div>
           </Link>
-          <Link href="/">
-            <div className="o_icon text-primary">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="of_content ">
-              <h5>Account</h5>
-              <p className="text-light">Register or Login</p>
-            </div>
-          </Link>
+          {status === 'loading' ? (
+            'loading'
+          ) : session?.user ? (
+            <Link href="/account">
+              <div className="o_icon text-primary">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="of_content ">
+                <h5>Account</h5>
+                <p className="text-light">Profile</p>
+              </div>
+            </Link>
+          ) : (
+            <Link href="/login">
+              <div className="o_icon text-primary">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="of_content ">
+                <h5>Account</h5>
+                <p className="text-light">Login</p>
+              </div>
+            </Link>
+          )}
+
           <button type="button" class="ctm_btn ml-[10px] ">
             PC Builder
           </button>
