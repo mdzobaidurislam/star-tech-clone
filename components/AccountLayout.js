@@ -2,6 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
+import {signOut, useSession} from 'next-auth/react';
+import Cookies from 'js-cookie';
+import {useDispatch} from 'react-redux';
 export default function AccountLayout({children}) {
   const myaccount = [
     {
@@ -54,6 +57,18 @@ export default function AccountLayout({children}) {
     },
   ];
   const router = useRouter();
+  const {status, data: session} = useSession();
+  const dispatch = useDispatch();
+  const logoutClickHandler = async () => {
+    Cookies.remove('cart');
+    dispatch({
+      type: 'CART_RESET',
+    });
+    const data = await signOut({redirect: false, callbackUrl: '/login'});
+
+    router.push(data.url);
+  };
+
   return (
     <div className="my_account p-[80px_150px]">
       <div className="my_header bg-[#ffffff] rounded-lg  p-[30px] shadow-sm m-4 ">
@@ -70,8 +85,17 @@ export default function AccountLayout({children}) {
             </div>
             <div className="my_name">
               <span className="text-primary font-[500]">Welcome</span>
-              <h3 className="text-2xl font-[500] ">Md.Zobaidur Islam</h3>
+              <h3 className="text-2xl font-[500] ">
+                {status === 'loading' ? (
+                  'loading'
+                ) : session?.user ? (
+                  <span>{session?.user.name}</span>
+                ) : null}
+              </h3>
             </div>
+            <button onClick={logoutClickHandler} className="ctm_btn">
+              Logout
+            </button>
           </div>
           <div>
             <div className="point flex flex-wrap items-center justify-center text-center gap-6 ">

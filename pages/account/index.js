@@ -55,6 +55,7 @@ export default function AccountScreen() {
       url: 'orders',
     },
   ];
+
   return (
     <Layout title="My Account ">
       <AccountLayout>
