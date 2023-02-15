@@ -4,13 +4,19 @@ import Product from '../components/Product/Product';
 import Details from '../components/Details/Details';
 import Banner from '../components/Banner/Banner';
 import axios from 'axios';
+import {useEffect, useState} from 'react';
 
 export default function Home(props) {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    setProducts(props.products);
+  }, [props.products]);
+
   return (
     <Layout>
       <Banner />
       <Category />
-      <Product products={props.products} />
+      <Product products={products} />
       <Details />
     </Layout>
   );
