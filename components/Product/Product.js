@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {ADD_TO_CART} from '../../action/cartAction';
+import Link from 'next/link';
 
 const Product = ({products}) => {
-  console.log(products);
+  // console.log(products);
 
   const dispatch = useDispatch();
 
@@ -45,9 +46,14 @@ const Product = ({products}) => {
                           />
                         </div>
                         <div className="product_content">
-                          <h4 className="group-hover/item:text-primary ">
-                            {item.name}
-                          </h4>
+                          <Link href={`/product/${item.slug}`} legacyBehavior>
+                            <a>
+                              <h4 className="group-hover/item:text-primary ">
+                                {item.name}
+                              </h4>
+                            </a>
+                          </Link>
+
                           <div class="product_item_price text-left">
                             <span class="price_new text-primary">
                               {item.price}৳

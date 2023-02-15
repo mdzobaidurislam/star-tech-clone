@@ -331,8 +331,105 @@ header .search input {
 
 /* shop price range end */
 
+/* product  single page  */
+.product-info-table tbody tr {
+    margin: 0 7px 7px -2px;
+    background: rgba(55, 73, 187, .05);
+    border-radius: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 14px;
+}
 
+.product-info-table tbody tr .product-info-label {
+    color: #666;
+}
 
+.product-info-table tbody tr .product-info-data {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.short-description li {
+    display: block;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+
+.short-description .view-more {
+    display: inline-block;
+    line-height: 24px;
+    padding-bottom: 2px;
+    color: #e5330b;
+    border-bottom: 1px solid #e5330b;
+    cursor: pointer;
+}
+
+.tab button {
+    @apply bg-[#fff] rounded-lg shadow-sm m-2 p-[10px_20px] text-[#000] font-[600] transition-all
+}
+
+.tab button:hover {
+    @apply bg-primary text-[#fff]
+}
+
+.product_description {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.section-head {
+    padding-bottom: 20px;
+}
+
+.data-table {
+    width: 100%;
+    /* margin-top: -20px; */
+}
+
+.data-table.flex-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-table tr {
+    display: flex;
+}
+
+.data-table .heading-row {
+    background: rgba(55, 73, 187, .05);
+    color: #3749bb;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold;
+    padding: 6px 20px;
+    margin: 20px 0 0;
+    border-radius: 5px;
+}
+
+.flex-table td {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.data-table tbody td.name {
+    color: #666;
+}
+
+.data-table tbody td {
+    padding: 10px 20px;
+    line-height: 22px;
+    border-bottom: 1px solid #ecedef;
+}
+
+.flex-table td.name {
+    flex: 0 0 250px;
+    display: flex;
+}
 
 @media (max-width: 1023px) {
 
