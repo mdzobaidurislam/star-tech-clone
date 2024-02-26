@@ -92,7 +92,7 @@ const Category = () => {
   ];
   return (
     <div className="category">
-      <div className=" px-[20px]">
+      <div className=" px-[100px]">
         <div class="grid grid-rows-1 grid-flow-col gap-4">
           <div className="heading text-center ">
             <h2

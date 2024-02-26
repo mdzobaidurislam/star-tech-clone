@@ -34,7 +34,7 @@ function CartScreen() {
           </Link>
         </div>
       ) : (
-        <div className="bg-[#ffffff] rounded-lg p-[30px] shadow-sm m-4 ">
+        <div className="bg-[#ffffff] rounded-lg  mx-[100px] shadow-sm m-4 ">
           <div className="grid md:grid-cols-4 md:gap-5 ">
             <div className="md:col-span-3 overflow-x-auto">
               <table className="min-w-full">

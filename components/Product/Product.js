@@ -14,7 +14,7 @@ const Product = ({products}) => {
   };
   return (
     <div className="product_section">
-      <div className=" px-[20px]">
+      <div className=" px-[100px]">
         <div class="grid grid-rows-1 grid-flow-col gap-4">
           <div className="heading text-center ">
             <h2

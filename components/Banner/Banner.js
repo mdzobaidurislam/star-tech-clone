@@ -3,7 +3,7 @@ import BannerSlider from './BannerSlider';
 
 export default function Banner() {
   return (
-    <div className="banner_section py-[40px] px-[40px]">
+    <div className="banner_section py-[40px] px-[100px]">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-8 gap-5">
         <div className="b_slider col-span-1 lg:col-span-6">
           <BannerSlider />
